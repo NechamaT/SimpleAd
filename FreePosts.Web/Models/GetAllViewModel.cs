@@ -9,6 +9,9 @@ namespace FreePosts.Web.Models
     public class GetAllViewModel
     {
         public List<Post> Posts { get; set; }
+
+
+
         public List<int> Ids { get; set; }
     }
 }

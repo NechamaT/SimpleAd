@@ -25,6 +25,8 @@ namespace FreePosts.Web.Controllers
             if (list == null)
             {
                 list = new List<int>();
+
+
             }
             HttpContext.Session.Set("Ids", list);
             var vm = new GetAllViewModel
