@@ -1,0 +1,31 @@
+﻿@using FreePost.Data
+@model GetAllViewModel
+
+    <div class="container">
+        <main role="main" class="pb-3">
+
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    @foreach (Post post in Model.Posts)
+                    {
+                    <div class="jumbotron">
+                        <h5>@post.Name</h5>
+                        <h5>@post.DateCreated</h5>
+                        <h5>@post.PhoneNumber</h5>
+                        <h3>Details:</h3>
+                        <p>@post.Description</p>
+
+                        @if (Model.Ids.Contains(post.Id))
+                        {
+                            <form method="post" action="/Home/Delete">
+                                <input type="hidden" name="id" value="@post.Id" />
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                        }
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </main>
+    </div>
